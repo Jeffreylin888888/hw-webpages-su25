@@ -123,7 +123,7 @@ layout: home
 ### L_NEAREST + P_NEAREST (Case 3)
 ![LnearestPnearest](assets/LnearestPnearest.png)
 
-### L_NEAREST + P_LINEAR (Case 3)
+### L_NEAREST + P_LINEAR (Case 4)
 ![LnearestPlienar](assets/LnearestPlinear.png)
 
 ### Code Snippets
