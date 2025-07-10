@@ -36,5 +36,17 @@ layout: home
   
 - For each pixel, we evaluated barycentric coverage at several subpixel sample locations—only those that pass the triangle test were filled with color, which smooths edge transitions. We used jittered sampling to vary subpixel positions randomly within subcells, preventing structured grid aliasing and improving the smoothness of the triangle edges. The final color of each pixel is computed as the average of all its subpixel samples, which naturally blends edges where only a portion of the pixel is covered by the triangle.
 
+- For the normal, original implementation (meaning no jitter), the results are as follows: at sample rate 1, the pixels change color abruptly, forming jagged edges. At 4 and 16, the edge transitions appear more gradual due to the averaging of multiple subpixel samples. So as we go from 1 to 4 to 16 in the sample rate, less aliasing occured. (Pictures will be shown two paragraphs below along with jitter.)
+
+- To earn extra credit, we implemented jittered supersampling by generating random subpixel offsets within a stratified grid. Each sample is jittered within its grid cell to avoid regular pattern repetition. Jittered sampling reduces structured aliasing artifacts that grid-based supersampling can’t fully eliminate. This is noticeable in the smoother edge transitions and reduced moiré patterns along triangle boundaries. Comparing the side-by-side screenshots, jittered sampling (especially at 16 samples) shows a more natural gradient and softer transitions than the regular grid approach, particularly at tight angles and intersections. (Pictures are below along with regular ones, a total of 6)
+
+
+
+
+
+
+
+
+
 
 
