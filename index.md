@@ -20,9 +20,9 @@ layout: home
 ### Screenshot of `test4.svg`
 ![test4](assets/realtask1.png)
 
-### Code Snippets for Optimizations
-![optimization1](assets/realtask1-1.png)
-![optimization2](assets/realtask1-2.png)
+### Code Snippets
+![task1code1](assets/realtask1-1.png)
+![task1code2](assets/realtask1-2.png)
 
 ### Timing Comparison
 ![timing](assets/realtask1-3.png)
@@ -51,6 +51,9 @@ layout: home
 ![Sample Rate 16 - Jittered](assets/jitter16pixel.png)
 dc
 
+### Code Snippets
+![task2code1](assets/realtask1-1.png)
+![task2code2](assets/realtask1-2.png)
 
 
 
