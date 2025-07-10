@@ -1,6 +1,7 @@
 ---
 title: Homework 1 Write-Up (Jeffrey, Katrina)
-layout: home
+layout: default
+nav_order: 1
 ---
 
 
