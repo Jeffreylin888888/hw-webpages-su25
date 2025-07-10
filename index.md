@@ -49,7 +49,7 @@ layout: home
 ![Sample Rate 1 - Jittered](assets/jitter1pixel.png)
 ![Sample Rate 4 - Jittered](assets/jitter4pixel.png)
 ![Sample Rate 16 - Jittered](assets/jitter16pixel.png)
-dc
+
 
 ### Code Snippets
 ![task2code1](assets/realtask1-1.png)
