@@ -111,6 +111,16 @@ layout: home
 
 ## Task 6: “Level sampling” with mipmaps for texture mapping
 
+- Level sampling means picking the right mipmap level based on how much the texture is being scaled on screen. If the texture is zoomed out or appears smaller, using a lower-resolution mipmap helps avoid aliasing. In my implementation in sampler.cpp, I calculate the level by taking the max of the scaled differences in texture coordinates (du and dv), which gives a rough sense of how much the texture is stretched. Depending on the user's choice, I either always sample from level 0 (L_ZERO) or round to the nearest computed level (L_NEAREST) to use the most appropriate mipmap.
+
+
+- L_ZERO + P_NEAREST (Case 1): Shows sharp but aliased edges. You can see hard pixel steps (jaggedness)
+- L_ZERO + P_LINEAR (Case 2): Smoother edges, but blurry.
+- L_NEAREST + P_NEAREST (Case 3): Shows some aliasing, but less severe than Case 1.
+- L_NEAREST + P_LINEAR (Case 4): Best quality overall — smooth and readable.
+
+- Each combination balances speed, memory, and visual quality differently. Nearest level and nearest pixel sampling are fastest but produce more aliasing. Linear pixel sampling adds some computational cost but significantly improves visual smoothness. Using mipmaps (level sampling) increases memory usage but greatly reduces aliasing at a distance. Supersampling (adjusting the number of samples per pixel) is even more computationally expensive, but it offers the best antialiasing, especially along high-frequency edges.
+
 ### Original Picture (The nobel I took last week)
 ![originalPicture](assets/nobel.png)
 
