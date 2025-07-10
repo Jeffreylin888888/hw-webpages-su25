@@ -140,7 +140,9 @@ layout: home
 ![task6code1](assets/task6code1.png)
 ![task6code2](assets/task6code2.png)
 ![task6code3](assets/task6code3.png)
-d
+
+
+### We finished Homework 1 of CS184. Yay. Thanks for reading. 
 
 
 
