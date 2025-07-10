@@ -54,8 +54,11 @@ layout: home
 ### Code Snippets
 ![task2code1](assets/task2code1.png)
 ![task2code2](assets/task2code2.png)
-d
 
+
+## Task 3: Transforms
+
+- In Task 3, we implemented the SVG transforms—translate, scale, and rotate—using 3x3 homogeneous coordinate matrices in transforms.cpp following the SVG specification. Translation shifts elements by updating the matrix’s last column, scaling adjusts element sizes along the x and y axes by modifying the diagonal, and rotation uses the standard 2D rotation matrix with angles converted from degrees to radians. To test these transforms, I modified the provided robot.svg into my_robot.svg by applying a rotation transform to the robot’s left arm group, creating a static waving pose. Running the renderer with my updated SVG showed the robot waving its left hand correctly, confirming that the transforms work as intended and can be combined hierarchically to create more complex shapes and animations.
 
 
 
