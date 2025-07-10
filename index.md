@@ -143,6 +143,14 @@ layout: home
 ![task6code3](assets/task6code3.png)
 
 
+
+### Acknowledgements of AI Assistance
+- We used ChatGPT minimally to clarify C++ syntax and phrasing in parts of the write-up. All implementation decisions, debugging, and conceptual understanding were done by us.
+
+### Challenges and Process
+-We spent a lot of time on this assignment and ran into a few challenges along the way. One particularly frustrating bug was the appearance of strange white diagonal lines in some of our renders. At first, we weren’t sure what was causing them, but after some debugging and help of CS184 staff on edstem, we figured out they were happening because parts of the sample buffer weren’t being properly initialized or filled. Fixing this involved double-checking our supersampling logic and making sure every subpixel sample was written to and averaged correctly.
+
+
 ### We finished Homework 1 of CS184. Yay. Thanks for reading. 
 
 
