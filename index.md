@@ -108,7 +108,35 @@ layout: home
 ![task5code1](assets/task5code1.png)
 ![task5code2](assets/task5code2.png)
 
-d
+
+## Task 6: “Level sampling” with mipmaps for texture mapping
+
+### Original Picture (The nobel I took last week)
+![originalPicture](assets/nobel.png)
+
+### L_ZERO + P_NEAREST (Case 1)
+![LzeroPnearest](assets/LzeroPnearest.png)
+
+### L_ZERO + P_LINEAR (Case 2)
+![LzeroPlinear](assets/LzeroPlinear.png)
+
+### L_NEAREST + P_NEAREST (Case 3)
+![LnearestPnearest](assets/LnearestPnearest.png)
+
+### L_NEAREST + P_LINEAR (Case 3)
+![LnearestPlienar](assets/LnearestPlinear.png)
+
+### Code Snippets
+![task6code1](assets/task6code1.png)
+![task6code2](assets/task6code2.png)
+![task6code3](assets/task6code3.png)
+
+
+
+
+
+
+
 
 
 
