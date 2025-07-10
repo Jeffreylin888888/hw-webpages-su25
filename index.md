@@ -52,8 +52,8 @@ layout: home
 
 
 ### Code Snippets
-![task2code1](assets/realtask1-1.png)
-![task2code2](assets/realtask1-2.png)
+![task2code1](assets/task2code1.png)
+![task2code2](assets/task2code2.png)
 
 
 
