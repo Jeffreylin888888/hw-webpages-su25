@@ -3,6 +3,7 @@ title: Homework 1 Write-Up (Jeffrey, Katrina)
 layout: home
 ---
 
+
 ## Task 1: Drawing Single-Color Triangles (We did extra credit part for this)
 
 - To rasterize a triangle, we first computed its axis-aligned bounding box. Then, for each pixel that is centered within that bounding box, we check whether it lies inside the triangle using edge functions based on the triangle's vertices. If a pixel passes all edge tests, we fill it in with the appropriate color.
