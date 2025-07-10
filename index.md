@@ -40,7 +40,15 @@ layout: home
 
 - To earn extra credit, we implemented jittered supersampling by generating random subpixel offsets within a stratified grid. Each sample is jittered within its grid cell to avoid regular pattern repetition. Jittered sampling reduces structured aliasing artifacts that grid-based supersampling can’t fully eliminate. This is noticeable in the smoother edge transitions and reduced moiré patterns along triangle boundaries. Comparing the side-by-side screenshots, jittered sampling (especially at 16 samples) shows a more natural gradient and softer transitions than the regular grid approach, particularly at tight angles and intersections. (Pictures are below along with regular ones, a total of 6)
 
+### Supersampling Comparison (No Jitter)
+![Sample Rate 1](images/regular1pixel.png)
+![Sample Rate 4](images/regular4pixel.png)
+![Sample Rate 16](images/regular16pixel.png)
 
+### Supersampling Comparison (With Jitter)
+![Sample Rate 1 - Jittered](images/jitter1pixel.png)
+![Sample Rate 4 - Jittered](images/jitter4pixel.png)
+![Sample Rate 16 - Jittered](images/jitter16pixel.png)
 
 
 
