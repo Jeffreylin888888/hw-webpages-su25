@@ -7,7 +7,7 @@ layout: home
 
 - To rasterize a triangle, we first computed its axis-aligned bounding box. Then, for each pixel that is centered within that bounding box, we check whether it lies inside the triangle using edge functions based on the triangle's vertices. If a pixel passes all edge tests, we fill it with the appropriate color.
 
-- My algorithm ensures correctness because the bounding box is the minimum rectangle enclosing the triangle. Although we test every pixel inside the box, the edge function method ensures only pixels truly inside the triangle are drawn. Therefore, our approach is just as accurate as sampling every point inside the bounding box.
+- Our algorithm ensures correctness because the bounding box is the minimum rectangle enclosing the triangle. Although we test every pixel inside the box, the edge function method ensures only pixels truly inside the triangle are drawn. Therefore, our approach is just as accurate as sampling every point inside the bounding box.
 
 - To speed up triangle rasterization, we applied the following optimizations:
   - Precomputed the constants for the edge functions (A, B, C) to avoid redundant arithmetic within the inner loop.
@@ -34,7 +34,7 @@ layout: home
   
 - In rasterize_triangle(), we added two nested loops to iterate over subpixel positions within each pixel, and used jittered(we use the normal and also the extra credit jitter) offsets for anti-aliasing (i.e., stratified random sampling inside each subgrid cell). We modified fill_pixel() and resolve_to_framebuffer() to write to and read from the sample_buffer appropriately—filling each sub-slot independently, then averaging during the final resolve step. We also updated set_sample_rate() and set_framebuffer_target() to size correctly the sample_buffer based on the sample_rate, to ensure that memory is always allocated for all sub-samples across the image.
   
-- For each pixel, we evaluated barycentric coverage at several subpixel sample locations—only those that pass the triangle test were filled with color, which smooths edge transitions. We used jittered sampling to vary subpixel positions randomly within subcells, preventing structured grid aliasing and improving the smoothness of the triangle edges. The final color of each pixel is computed as the average of all its subpixel samples, which naturally blends edges where only a portion of the pixel is covered by the triangle.
+- For each pixel, we evaluated barycentric coverage at several subpixel sample locations—only those that pass the triangle test were filled with color, which smooths edge transitions. We used jittered sampling (from task 1 extra credit) to vary subpixel positions randomly within subcells, preventing structured grid aliasing and improving the smoothness of the triangle edges. The final color of each pixel is computed as the average of all its subpixel samples, which naturally blends edges where only a portion of the pixel is covered by the triangle.
 
 - For the normal, original implementation (meaning no jitter), the results are as follows: at sample rate 1, the pixels change color abruptly, forming jagged edges. At 4 and 16, the edge transitions appear more gradual due to the averaging of multiple subpixel samples. So as we go from 1 to 4 to 16 in the sample rate, less aliasing occured. (Pictures will be shown two paragraphs below along with jitter.)
 
@@ -71,7 +71,7 @@ layout: home
 
 ## Task 4: Barycentric coordinates
 
-- Barycentric coordinates are a way to represent a point inside a triangle as a weighted combination of the triangle’s three vertices. Each coordinate corresponds to the "influence" or weight of a particular vertex, and the sum of these weights is always 1. By calculating barycentric coordinates for any point within the triangle, we can interpolate values defined at the vertices—such as colors smoothly across the triangle’s surface. For example, if one vertex is red, another green, and the third blue, barycentric interpolation blends these colors based on the point’s relative position, producing a gradient effect. This method is fundamental in graphics for tasks like shading and texture mapping. (screenshot below of svg/basic/test7.svg demonstrates this smoothly blended color triangle, confirming the correctness of the barycentric interpolation implementation.
+- Barycentric coordinates are a way to represent a point inside a triangle as a weighted combination of the triangle’s three vertices. Each coordinate corresponds to the weight of a particular vertex, and the sum is 1. By calculating barycentric coordinates for any point within the triangle, we can interpolate values defined at the vertices such as colors smoothly across the triangle’s surface. For example, if one vertex is red, another green, and the third blue, barycentric interpolation blends these colors based on the point’s relative position, producing a gradient effect. We can use this in texture mapping. (screenshot below of svg/basic/test7.svg demonstrates this smoothly blended color triangle, confirming we did the implementation correctly.
 
 ### svg/basic/test7.svg (the smoothly blended color circle as wanted)
 ![task4color](assets/task4color.png)
@@ -86,4 +86,32 @@ layout: home
 ## Task 5: “Pixel sampling” for texture mapping
 
 -  Pixel sampling is determining the color value for a pixel by sampling colors from a texture. In texture mapping, it means mapping texture coordinates (uv coordinate) onto screen pixels to fetch the appropriate color. We implemented two pixel sampling methods: nearest neighbor and bilinear interpolation. Nearest neighbor sampling picks the color of the closest texel to the mapped UV coordinate, which is faster but can produce blocky results. Bilinear sampling computes a weighted average of the four nearest texels around the coordinate, producing smoother transitions and reducing pixelation.
+
+- We took four screenshots as instructed(the below four images). The differences are clear. The one with nearest sampling at 1 sample per pixel looks the worst — it’s super blocky and jagged, especially around edges and areas with lots of detail. Bilinear sampling at 1 sample already looks noticeably better; it smooths out the transitions and helps avoid that harsh pixelation. When the sampling rate goes up to 16, both methods improve, but in different ways. Nearest at 16 helps reduce aliasing a bit because of the averaging, but it still feels rough since it’s not interpolating between texels. On the other hand, bilinear at 16 looks the cleanest and most polished overall — the textures are smoother and the image feels more cohesive. Overall, it’s pretty clear that bilinear sampling, especially with a higher sample rate, gives a much better visual result.
+
+- You’ll really notice a big difference between nearest and bilinear sampling when the texture has a lot of fine detail and it’s being scaled down or viewed from a distance. Nearest just grabs the closest pixel, which can make things look jagged or noisy, especially along edges or in patterns. Bilinear smooths things out by blending between neighboring pixels, so you get a softer, more natural look. The difference stands out most when you're working with low sample rates or zoomed-out views — that's when bilinear does a much better job at reducing harsh transitions and visual artifacts.
+
+
+### Bilinear 1 sample/pixel
+![bilinear1](assets/b1.png)
+
+### Nearest 1 sample/pixel
+![nearest1](assets/n1.png)
+
+### Bilinear 16 samples/pixel
+![bilinear16](assets/task5third.png)
+
+### Nearest 16 samples/pixel
+![nearest16](assets/task5fourth.png)
+
+### Code Snippets
+![task5code1](assets/task5code1.png)
+![task5code2](assets/task5code2.png)
+
+
+
+
+
+
+
 
