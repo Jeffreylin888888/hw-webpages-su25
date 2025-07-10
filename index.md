@@ -49,7 +49,7 @@ layout: home
 ![Sample Rate 1 - Jittered](images/jitter1pixel.png)
 ![Sample Rate 4 - Jittered](images/jitter4pixel.png)
 ![Sample Rate 16 - Jittered](images/jitter16pixel.png)
-
+d
 
 
 
