@@ -82,4 +82,8 @@ layout: home
 ### Code Snippet
 ![task4code1](assets/task4code.png)
 
-d
+
+## Task 5: “Pixel sampling” for texture mapping
+
+-  Pixel sampling is determining the color value for a pixel by sampling colors from a texture. In texture mapping, it means mapping texture coordinates (uv coordinate) onto screen pixels to fetch the appropriate color. We implemented two pixel sampling methods: nearest neighbor and bilinear interpolation. Nearest neighbor sampling picks the color of the closest texel to the mapped UV coordinate, which is faster but can produce blocky results. Bilinear sampling computes a weighted average of the four nearest texels around the coordinate, producing smoother transitions and reducing pixelation.
+
