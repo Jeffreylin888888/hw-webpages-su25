@@ -68,4 +68,16 @@ layout: home
 ![task3code1](assets/task3code1.png)
 ![task3code2](assets/task3code2.png)
 
-dcc
+
+## Task 4: Barycentric coordinates
+
+- Barycentric coordinates are a way to represent a point inside a triangle as a weighted combination of the triangle’s three vertices. Each coordinate corresponds to the "influence" or weight of a particular vertex, and the sum of these weights is always 1. By calculating barycentric coordinates for any point within the triangle, we can interpolate values defined at the vertices—such as colors smoothly across the triangle’s surface. For example, if one vertex is red, another green, and the third blue, barycentric interpolation blends these colors based on the point’s relative position, producing a gradient effect. This method is fundamental in graphics for tasks like shading and texture mapping. (screenshot below of svg/basic/test7.svg demonstrates this smoothly blended color triangle, confirming the correctness of the barycentric interpolation implementation.
+
+### svg/basic/test7.svg (the smoothly blended color circle as wanted)
+![task4color](assets/task4color.png)
+
+### A Smoothly Blended Color Triangle as Wanted
+![task4color](assets/task4triangle.png)
+
+### Code Snippet
+![task4code1](assets/task4code.png)
