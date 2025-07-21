@@ -1,3 +1,9 @@
+---
+layout: default
+title: Homework 2
+nav_order: 2
+---
+
 # CS184 Homework 2 – Write-Up (Jeffrey, Katrina)
 
 This page documents our implementation and results for HW2, CS184
