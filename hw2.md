@@ -2,6 +2,12 @@
 
 This page documents our implementation and results for HW2, CS184
 
+To have very high resolution words and images, please visit: https://docs.google.com/presentation/d/1zVNOSBosbC5QE_e61ApUIjSQhhVWLl8lyGq2js33MYk/edit?usp=sharing
+
+We have all the write-up there, and we screenshotted them into this github webpage.
+
+It took us around 40 hours to get through all six questions. 
+
 ## 📷 Slides
 
 ![Slide 1](assets/slide1.png)  
