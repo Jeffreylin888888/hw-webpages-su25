@@ -8,7 +8,7 @@ nav_order: 2
 
 This page documents our implementation and results for HW2, CS184
 
-https://jeffreylin888888.github.io/hw-webpages-su25/hw2
+https://jeffreylin888888.github.io/hw-webpages-su25/hw2d
 
 
 
