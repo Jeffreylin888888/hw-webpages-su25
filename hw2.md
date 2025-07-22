@@ -32,3 +32,5 @@ Overview: For this project, we implemented a complete geometry processing pipeli
 ![Slide 6](assets/slide6.png)  
 ![Slide 7](assets/slide7.png)  
 ![Slide 8](assets/slide8.png)
+![Slide 7](assets/9.png)  
+![Slide 8](assets/10.png)
