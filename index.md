@@ -72,8 +72,6 @@ nav_order: 1
 ### A Smoothly Blended Color Triangle as Wanted
 ![task4color](assets/task4triangle.png)
 
-### Code Snippet
-![task4code1](assets/task4code.png)
 
 
 ## Task 5: “Pixel sampling” for texture mapping
