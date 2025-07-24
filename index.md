@@ -24,9 +24,6 @@ nav_order: 1
 ### Screenshot of `test4.svg`
 ![test4](assets/realtask1.png)
 
-### Code Snippets
-![task1code1](assets/realtask1-1.png)
-![task1code2](assets/realtask1-2.png)
 
 ### Timing Comparison
 ![timing](assets/realtask1-3.png)
@@ -55,11 +52,6 @@ nav_order: 1
 ![Sample Rate 16 - Jittered](assets/jitter16pixel.png)
 
 
-### Code Snippets
-![task2code1](assets/task2code1.png)
-![task2code2](assets/task2code2.png)
-
-
 ## Task 3: Transforms
 
 - In Task 3, we implemented the SVG transforms—translate, scale, and rotate—using 3x3 homogeneous coordinate matrices in transforms.cpp following the SVG specification. Translation shifts elements by updating the matrix’s last column, scaling adjusts element sizes along the x and y axes by modifying the diagonal, and rotation uses the standard 2D rotation matrix with angles converted from degrees to radians. To test these transforms, I modified the provided robot.svg into my_robot.svg by applying a rotation transform to the robot’s left arm group, creating a static waving pose. Running the renderer with my updated SVG showed the robot waving its left hand correctly, confirming that the transforms work as intended and can be combined hierarchically to create more complex shapes and animations. (Picture or robot is directly below here.)
@@ -68,9 +60,6 @@ nav_order: 1
 ### Robot Static Waving Left Arm
 ![robotWavingLeftArm](assets/task3only.png)
 
-### Code Snippets
-![task3code1](assets/task3code1.png)
-![task3code2](assets/task3code2.png)
 
 
 ## Task 4: Barycentric coordinates
@@ -108,9 +97,6 @@ nav_order: 1
 ### Nearest 16 samples/pixel
 ![nearest16](assets/task5fourth.png)
 
-### Code Snippets
-![task5code1](assets/task5code1.png)
-![task5code2](assets/task5code2.png)
 
 
 ## Task 6: “Level sampling” with mipmaps for texture mapping
@@ -140,10 +126,6 @@ nav_order: 1
 ### L_NEAREST + P_LINEAR (Case 4)
 ![LnearestPlienar](assets/LnearestPlinear.png)
 
-### Code Snippets
-![task6code1](assets/task6code1.png)
-![task6code2](assets/task6code2.png)
-![task6code3](assets/task6code3.png)
 
 
 
