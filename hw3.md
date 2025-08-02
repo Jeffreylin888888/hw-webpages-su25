@@ -43,7 +43,7 @@
       <img src="assets/cbdragon.png" width="200"/><br>cbdragon.png
     </td>
     <td align="center">
-      <img src="assets/CBbunny_screenshot_8-1.png" width="200"/><br>CBbunny_screenshot_8-1.png
+      <img src="assets/CBbunny_screenshot_8-1_16-4-56.png.png" width="200"/><br>CBbunny_screenshot_8-1.png
     </td>
     <td align="center">
       <img src="assets/maxplanck_no_bvh.png" width="200"/><br>maxplanck_no_bvh.png
