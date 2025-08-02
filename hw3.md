@@ -1,20 +1,18 @@
 ### Part 1
 
-<div style="display: flex; gap: 20px; justify-content: center;">
-
-  <div style="text-align: center;">
-    <strong>banana.png</strong><br>
-    <img src="assets/banana.png" alt="banana" width="200">
-  </div>
-
-  <div style="text-align: center;">
-    <strong>CBspheres.png</strong><br>
-    <img src="assets/CBspheres.png" alt="CBspheres" width="200">
-  </div>
-
-  <div style="text-align: center;">
-    <strong>cow.png</strong><br>
-    <img src="assets/cow.png" alt="cow" width="200">
-  </div>
-
-</div>
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/banana.png" width="200"><br>
+      <strong>banana.png</strong>
+    </td>
+    <td align="center">
+      <img src="assets/CBspheres.png" width="200"><br>
+      <strong>CBspheres.png</strong>
+    </td>
+    <td align="center">
+      <img src="assets/cow.png" width="200"><br>
+      <strong>cow.png</strong>
+    </td>
+  </tr>
+</table>
