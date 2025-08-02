@@ -24,3 +24,38 @@
 
 ### Part 2
 
+### Part 2
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/cblucy.png" width="200"/><br>cblucy.png
+    </td>
+    <td align="center">
+      <img src="assets/maxplanck_bvh.png" width="200"/><br>maxplanck_bvh.png
+    </td>
+    <td align="center">
+      <img src="assets/cow_no_bvh.png" width="200"/><br>cow_no_bvh.png
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="assets/cbdragon.png" width="200"/><br>cbdragon.png
+    </td>
+    <td align="center">
+      <img src="assets/CBbunny_screenshot_8-1.png" width="200"/><br>CBbunny_screenshot_8-1.png
+    </td>
+    <td align="center">
+      <img src="assets/maxplanck_no_bvh.png" width="200"/><br>maxplanck_no_bvh.png
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="assets/maxplanck.png" width="200"/><br>maxplanck.png
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+
