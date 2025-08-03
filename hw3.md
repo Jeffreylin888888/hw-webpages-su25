@@ -222,6 +222,10 @@
   </tr>
 </table>
 
+<ul>
+  <li>I rendered CBbunny.dae at 1024 spp with 4 light samples and Russian‐roulette (continuation probability 0.6) for max_ray_depth m = 0, 1, 2, 3, 4, and 100. At m = 0 the scene is completely black (no bounces). At m = 1 the floor and bunny glow brightly under the skylight (direct lighting only). At m = 2 you start to see a weak red and blue tint from the walls (“color bleed”) as light bounces once off a colored wall before reaching the surfaces. At m = 3 and m = 4 each additional bounce adds only a faint soft‐fill lift in the shadows, so the image brightens very little beyond m = 2—but the subtle shadow softening makes the bunny look progressively more natural. By m = 100 you’ve effectively captured the full diffuse global illumination—mean scene brightness matches m = 4, but the lighting is as realistic as diffuse GI allows (with only Monte Carlo noise from the roulette termination).
+</li>
+</ul>
 <table>
   <tr>
     <td><img src="assets/CBbunny_rr0.png" width="120"></td>
@@ -240,6 +244,7 @@
     <td align="center">CBbunny_rr100.png</td>
   </tr>
 </table>
+
 
 <table>
   <tr>
