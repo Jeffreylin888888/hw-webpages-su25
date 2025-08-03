@@ -8,6 +8,8 @@ nav_order: 3
 
 ### Homework 3: Jeffrey Lin
 
+###Some tables might be super long horiztonally, so please check using:https://jeffreylin888888.github.io/hw-webpages-su25/hw3  Thank you!
+
 ### Overview: This assignment implements a physically-based path tracer that simulates realistic lighting through global illumination. I built the system step-by-step, from ray generation and BVH acceleration to direct lighting, indirect bounces, and adaptive sampling. It supports soft shadows, color bleeding, and multi-bounce diffuse effects in scenes with area lights and Lambertian materials. I spent over 50 hours on this project, and some parts—especially indirect lighting and Russian Roulette—were challenging to debug. I ran into issues like black outputs from missing BSDF cosine terms or incorrect recursion depth handling, but I fixed them through careful testing and visualization. The final results are smooth, efficient, and visually accurate, with clean convergence at high sample counts and adaptive sampling successfully concentrating effort where it matters most. Each bullet points represents my answer to the corresponding bullet-point in the write-up instructions in the cs184 website, but later bullet points might elaborate on previous bullet points.
 
 ### Note: I used ChatGPT solely to help check grammar and syntax in my write-up. All code, implementation decisions, and analysis were my own.
