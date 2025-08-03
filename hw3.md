@@ -140,14 +140,6 @@
 
 <h3>Part 4</h3>
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="assets/CBbunny_global_fixed.png" width="200"/><br>CBbunny_global_fixed.png
-    </td>
-    <td align="center">
-      <img src="assets/CBspheres_direct.png" width="200"/><br>CBspheres_direct.png
-    </td>
-  </tr>
-</table>
+
+
 
