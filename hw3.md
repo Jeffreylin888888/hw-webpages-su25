@@ -140,6 +140,71 @@
 
 <h3>Part 4</h3>
 
+<ul>
+  <li>• Your first bullet point</li>
+  <li>• Your second bullet point</li>
+</ul>
+<table>
+  <tr>
+    <td><img src="assets/CBbunny_global_fixed.png" width="200"></td>
+    <td><img src="assets/CBspheres_lambertian_global.png" width="200"></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><img src="assets/CBspheres_direct.png" width="200"></td>
+    <td><img src="assets/CBspheres_indirect.png" width="200"></td>
+  </tr>
+</table>
+<ul>
+  <li>• Some bullet point for context</li>
+</ul>
+
+<table>
+  <tr>
+    <td><img src="assets/CBbunny_unaccum0.png" width="200"></td>
+    <td><img src="assets/CBbunny_unaccum1.png" width="200"></td>
+    <td><img src="assets/CBbunny_unaccum2.png" width="200"></td>
+    <td><img src="assets/CBbunny_unaccum3.png" width="200"></td>
+    <td><img src="assets/CBbunny_unaccum4.png" width="200"></td>
+    <td><img src="assets/CBbunny_unaccum5.png" width="200"></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><img src="assets/CBbunny_accum0.png" width="200"></td>
+    <td><img src="assets/CBbunny_accum1.png" width="200"></td>
+    <td><img src="assets/CBbunny_accum2.png" width="200"></td>
+    <td><img src="assets/CBbunny_accum3.png" width="200"></td>
+    <td><img src="assets/CBbunny_accum4.png" width="200"></td>
+    <td><img src="assets/CBbunny_accum5.png" width="200"></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><img src="assets/CBbunny_rr0.png" width="200"></td>
+    <td><img src="assets/CBbunny_rr1.png" width="200"></td>
+    <td><img src="assets/CBbunny_rr2.png" width="200"></td>
+    <td><img src="assets/CBbunny_rr3.png" width="200"></td>
+    <td><img src="assets/CBbunny_rr4.png" width="200"></td>
+    <td><img src="assets/CBbunny_rr100.png" width="200"></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><img src="assets/Spheres_s1.png" width="200"></td>
+    <td><img src="assets/Spheres_s2.png" width="200"></td>
+    <td><img src="assets/Spheres_s4.png" width="200"></td>
+    <td><img src="assets/Spheres_s8.png" width="200"></td>
+    <td><img src="assets/Spheres_s16.png" width="200"></td>
+    <td><img src="assets/Spheres_s64.png" width="200"></td>
+    <td><img src="assets/Spheres_s1024.png" width="200"></td>
+  </tr>
+</table>
 
 
 
