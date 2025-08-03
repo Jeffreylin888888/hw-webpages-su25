@@ -82,4 +82,42 @@
   </tr>
 </table>
 
+<h3>Part 3</h3>
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/importantlowbunny.png" width="200"/><br>importantlowbunny.png
+    </td>
+    <td align="center">
+      <img src="assets/importanthighbunny.png" width="200"/><br>importanthighbunny.png
+    </td>
+    <td align="center">
+      <img src="assets/hemilowbunny.png" width="200"/><br>hemilowbunny.png
+    </td>
+    <td align="center">
+      <img src="assets/hemihighbunny.png" width="200"/><br>hemihighbunny.png
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/bench_l1.png" width="200"/><br>bench_l1.png
+    </td>
+    <td align="center">
+      <img src="assets/bench_l4.png" width="200"/><br>bench_l4.png
+    </td>
+    <td align="center">
+      <img src="assets/bench_l16.png" width="200"/><br>bench_l16.png
+    </td>
+    <td align="center">
+      <img src="assets/bench_l64.png" width="200"/><br>bench_l64.png
+    </td>
+  </tr>
+</table>
+
 
