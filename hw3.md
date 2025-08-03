@@ -273,3 +273,29 @@
   </tr>
 </table>
 
+### Part 5
+
+<ul>
+  <li>• Adaptive sampling improves efficiency by focusing samples in high-variance regions.</li>
+</ul>
+<table>
+  <tr>
+    <td><img src="assets/CBbunny_adapt_rate.png" width="160"></td>
+    <td><img src="assets/CBbunny_adapt.png" width="160"></td>
+  </tr>
+  <tr>
+    <td align="center">CBbunny_adapt_rate.png</td>
+    <td align="center">CBbunny_adapt.png</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><img src="assets/CBspheres_adapt.png" width="160"></td>
+    <td><img src="assets/CBspheres_adapt_rate.png" width="160"></td>
+  </tr>
+  <tr>
+    <td align="center">CBspheres_adapt.png</td>
+    <td align="center">CBspheres_adapt_rate.png</td>
+  </tr>
+</table>
