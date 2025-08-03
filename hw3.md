@@ -132,5 +132,7 @@
 </table>
 
 <ul>
-  <li>Higher sample counts reduce noise and improve visual quality</li>
+  <li>When comparing uniform hemisphere sampling and light sampling, I observed that uniform sampling produces much noisier results, especially in shadowed regions, because it wastes samples in unlit areas. Light sampling, on the other hand, concentrates samples toward the light source, leading to smoother shadows and faster convergence. This behavior held true even with higher samples per pixel, but the contrast was especially clear at low sample counts.
+
+</li>
 </ul>
