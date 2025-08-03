@@ -248,6 +248,10 @@
 </table>
 
 
+<ul>
+  <li>I rendered the lambertian spheres scene at 480×360 with 4 light rays, 5 bounces, and 8 threads using 1, 2, 4, 8, 16, 64 and 1024 spp. At 1 spp it’s almost pure noise—no shape is clear. At 2 spp you can just make out the spheres’ silhouettes. At 4 spp the spheres and basic wall-bleed appear, but heavy grain remains. At 8 spp and 16 spp the major lighting and color bleed are visible with moderate noise. At 64 spp the image is almost smooth—with only faint speckle in shadows. At 1024 spp it’s essentially noise-free, showing crisp edges, accurate diffuse color bleed, and full global illumination.
+</li>
+</ul>
 <table>
   <tr>
     <td><img src="assets/Spheres_s1.png" width="120"></td>
@@ -268,3 +272,4 @@
     <td align="center">Spheres_s1024.png</td>
   </tr>
 </table>
+
