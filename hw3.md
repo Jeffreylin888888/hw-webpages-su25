@@ -111,7 +111,7 @@
 </table>
 
 <ul>
-  <li>The following table explores different sample counts for the bench mesh</li>
+  <li>To evaluate the impact of light sampling on soft shadow quality, I rendered the bench.dae scene—containing at least one area light—using 1, 4, 16, and 64 light rays (via the -l flag), while keeping the number of samples per pixel fixed at 1 (-s 1). As expected, with only 1 light ray, the result was extremely noisy with sharp, grainy shadows. Increasing to 4 rays moderately reduced the noise, while 16 rays noticeably smoothed out the soft shadows. At 64 rays, the image appeared significantly less noisy, with soft shadows becoming more defined and realistic. These results demonstrated that increasing the number of light rays improves the accuracy of area light integration and reduces Monte Carlo variance, even when using a single camera sample per pixel. </li>
 </ul>
 
 <table>
