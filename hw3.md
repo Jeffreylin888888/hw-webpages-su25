@@ -159,6 +159,10 @@
   </tr>
 </table>
 
+<ul>
+  <li>Direct vs. Indirect Illumination on Spheres</li>
+</ul>
+
 <table>
   <tr>
     <td><img src="assets/CBspheres_direct.png" width="200"></td>
@@ -169,6 +173,7 @@
     <td align="center">CBspheres_indirect.png</td>
   </tr>
 </table>
+
 <ul>
   <li>• Some bullet point for context</li>
 </ul>
