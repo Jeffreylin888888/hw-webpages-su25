@@ -4,7 +4,7 @@ title: Homework 3
 nav_order: 3
 ---
 
-[🔗 GitHub Repository for Homework 3](https://github.com/Jeffreylin888888/hw-webpages-su25/blob/main/hw3.md)
+[[🔗 GitHub Repository for Homework 3](https://github.com/Jeffreylin888888/hw-webpages-su25/blob/main/hw3.md)](https://jeffreylin888888.github.io/hw-webpages-su25/hw3)
 
 ### Homework 3: Jeffrey Lin
 
