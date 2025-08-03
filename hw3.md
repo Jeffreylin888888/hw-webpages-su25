@@ -88,7 +88,9 @@
   <li>I implemented two versions of direct lighting: estimate_direct_lighting_hemisphere and estimate_direct_lighting_importance. The hemisphere version samples directions uniformly over the hemisphere around the surface normal and checks if each ray hits a light. It’s simple but inefficient since most directions don’t lead to a light source. The importance sampling version, on the other hand, samples directions directly from the lights using sample_L(...). I sent rays only toward actual light sources and weighted contributions by the BSDF, cosine term, and PDF. This led to much better results with fewer noisy samples, especially for area lights. In short: hemisphere sampling wastes samples, while importance sampling targets light directly and is far more efficient.
 
 </li>
-  <li>Each image uses a different sampling method or light distribution</li>
+  <li>I rendered the same bunny scene using both uniform hemisphere sampling and importance sampling to compare the visual differences. At a low sample rate (1 light ray, 1 spp), importance sampling produced a brighter but noisier image because it concentrated samples toward the light source, while hemisphere sampling resulted in a darker image with a more uniform noise distribution. At higher sample rates (64 spp, 32 light rays), importance sampling yielded significantly smoother shadows and faster convergence, whereas hemisphere sampling remained darker with more visible noise. These results illustrated that importance sampling is more efficient at capturing direct lighting, especially as sample counts increase.
+
+</li>
 </ul>
 
 <table>
