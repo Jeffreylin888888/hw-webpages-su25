@@ -8,6 +8,11 @@
 
 <h3>Part 2</h3>
 
+<ul>
+  <li>This part includes visualizations of Lucy, Dragon, and Max Planck head</li>
+  <li>All scenes rendered inside Cornell box environments</li>
+</ul>
+
 <table>
   <tr>
     <td align="center">
@@ -21,6 +26,10 @@
     </td>
   </tr>
 </table>
+
+<ul>
+  <li>The models above are used to benchmark shading performance</li>
+</ul>
 
 <br/>
 
