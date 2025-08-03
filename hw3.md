@@ -141,7 +141,9 @@
 <h3>Part 4</h3>
 
 <ul>
-  <li>• Your first bullet point</li>
+  <li>• To implement indirect lighting, I completed the at_least_one_bounce_radiance(...) function by recursively sampling indirect bounces using sample_f(...). After obtaining the sampled direction wi and its PDF, I traced a secondary ray and multiplied the returned radiance by the BSDF value and cosine term. I also incorporated Russian Roulette with a 0.3 survival probability once the ray depth dropped below max_ray_depth, allowing me to capture deeper light bounces while keeping the estimate unbiased and avoiding infinite recursion.
+
+</li>
   <li>• Your second bullet point</li>
 </ul>
 <table>
