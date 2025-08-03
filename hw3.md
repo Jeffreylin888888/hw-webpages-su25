@@ -24,7 +24,6 @@
 
 ### Part 2
 
-<h3>Part 2</h3>
 
 <ul>
   <li>This part includes visualizations of Lucy, Dragon, and Max Planck head</li>
