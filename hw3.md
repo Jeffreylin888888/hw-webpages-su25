@@ -49,7 +49,9 @@
 </table>
 
 <ul>
-  <li>The models above are used to benchmark shading performance</li>
+  <li>To evaluate the performance benefits of BVH acceleration, I rendered several moderately complex scenes — including cow.dae and maxplanck.dae — both with and without BVH. For the cow model (5,856 primitives), rendering with BVH completed in 0.0881 seconds, while rendering without BVH took 1.4986 seconds, showing a 17× speedup. Similarly, for the more complex maxplanck model (50,801 primitives), rendering with BVH took only 0.0644 seconds, while without BVH it required 15.6048 seconds — a dramatic ~240× speedup. Despite producing nearly identical visual results, I observed that BVH reduced the average number of intersection tests per ray from 2991.36 to 6.35 in the maxplanck scene. These results demonstrate that BVH acceleration significantly improves rendering performance, especially as scene complexity increases.
+
+</li>
 </ul>
 
 <br/>
@@ -60,7 +62,7 @@
       <img src="assets/maxplanck_bvh.png" width="200"/><br>maxplanck_bvh.png
     </td>
     <td align="center">
-      <img src="assets/CBbunny_screenshot_8-1_16-4-56.png.png" width="200"/><br>CBbunny_screenshot_8-1.png
+      <img src="assets/CBbunny_screenshot_8-1_16-4-56.png.png" width="200"/><br>CBbunny_bvh.png
     </td>
     <td></td>
   </tr>
