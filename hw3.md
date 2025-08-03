@@ -160,7 +160,9 @@
 </table>
 
 <ul>
-  <li>Direct vs. Indirect Illumination on Spheres</li>
+  <li>To compare direct and indirect illumination, I rendered the CBspheres_lambertian.dae scene at 1024 samples per pixel, modifying PathTracer::at_least_one_bounce_radiance to isolate each effect. In the direct illumination image, lighting comes only from the ceiling light, resulting in sharp shadows and dark unlit areas. The red and blue walls have no visible influence on nearby surfaces. In contrast, the indirect-only image lacks hard shadows but shows soft lighting and clear color bleeding from the walls onto the spheres and floor, highlighting how global illumination contributes subtle yet crucial realism through bounced light.
+
+</li>
 </ul>
 
 <table>
