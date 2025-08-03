@@ -141,10 +141,12 @@
 <h3>Part 4</h3>
 
 <ul>
-  <li>• To implement indirect lighting, I completed the at_least_one_bounce_radiance(...) function by recursively sampling indirect bounces using sample_f(...). After obtaining the sampled direction wi and its PDF, I traced a secondary ray and multiplied the returned radiance by the BSDF value and cosine term. I also incorporated Russian Roulette with a 0.3 survival probability once the ray depth dropped below max_ray_depth, allowing me to capture deeper light bounces while keeping the estimate unbiased and avoiding infinite recursion.
+  <li>To implement indirect lighting, I completed the at_least_one_bounce_radiance(...) function by recursively sampling indirect bounces using sample_f(...). After obtaining the sampled direction wi and its PDF, I traced a secondary ray and multiplied the returned radiance by the BSDF value and cosine term. I also incorporated Russian Roulette with a 0.3 survival probability once the ray depth dropped below max_ray_depth, allowing me to capture deeper light bounces while keeping the estimate unbiased and avoiding infinite recursion.
 
 </li>
-  <li>• Your second bullet point</li>
+  <li>The following images demonstrate global illumination with both direct and indirect lighting, rendered at 1024 samples per pixel. In the CBbunny scene, the soft shadows beneath the bunny and the smooth shading across its surface highlight the contribution of indirect bounces, especially from the colored walls. Similarly, the CBspheres_lambertian scene exhibits noticeable color bleeding, with red and blue tones reflecting off the adjacent walls onto the white spheres. These results confirm that I correctly capture global illumination effects and produce realistic lighting with sufficient sampling.
+
+</li>
 </ul>
 <table>
   <tr>
