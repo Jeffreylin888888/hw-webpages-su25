@@ -85,7 +85,9 @@
 <h3>Part 3</h3>
 
 <ul>
-  <li>This section compares lighting techniques on the Stanford Bunny</li>
+  <li>I implemented two versions of direct lighting: estimate_direct_lighting_hemisphere and estimate_direct_lighting_importance. The hemisphere version samples directions uniformly over the hemisphere around the surface normal and checks if each ray hits a light. It’s simple but inefficient since most directions don’t lead to a light source. The importance sampling version, on the other hand, samples directions directly from the lights using sample_L(...). I sent rays only toward actual light sources and weighted contributions by the BSDF, cosine term, and PDF. This led to much better results with fewer noisy samples, especially for area lights. In short: hemisphere sampling wastes samples, while importance sampling targets light directly and is far more efficient.
+
+</li>
   <li>Each image uses a different sampling method or light distribution</li>
 </ul>
 
