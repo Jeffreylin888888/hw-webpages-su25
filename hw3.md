@@ -87,16 +87,16 @@
 <table>
   <tr>
     <td align="center">
-      <img src="assets/importantlowbunny.png" width="200"/><br>importantlowbunny.png
+      <img src="assets/importantlowbunny.png" width="200" height="200"/><br>importantlowbunny.png
     </td>
     <td align="center">
-      <img src="assets/importanthighbunny.png" width="200"/><br>importanthighbunny.png
+      <img src="assets/importanthighbunny.png" width="200" height="200"/><br>importanthighbunny.png
     </td>
     <td align="center">
-      <img src="assets/hemilowbunny.png" width="200"/><br>hemilowbunny.png
+      <img src="assets/hemilowbunny.png" width="200" height="200"/><br>hemilowbunny.png
     </td>
     <td align="center">
-      <img src="assets/hemihighbunny.png" width="200"/><br>hemihighbunny.png
+      <img src="assets/hemihighbunny.png" width="200" height="200"/><br>hemihighbunny.png
     </td>
   </tr>
 </table>
@@ -119,5 +119,3 @@
     </td>
   </tr>
 </table>
-
-
