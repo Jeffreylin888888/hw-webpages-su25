@@ -1,3 +1,9 @@
+---
+layout: default
+title: Homework 3
+nav_order: 3
+---
+
 [🔗 GitHub Repository for Homework 3](https://github.com/Jeffreylin888888/hw-webpages-su25/blob/main/hw3.md)
 
 ### Homework 3: Jeffrey Lin
