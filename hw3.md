@@ -84,6 +84,11 @@
 
 <h3>Part 3</h3>
 
+<ul>
+  <li>This section compares lighting techniques on the Stanford Bunny</li>
+  <li>Each image uses a different sampling method or light distribution</li>
+</ul>
+
 <table>
   <tr>
     <td align="center">
@@ -101,7 +106,9 @@
   </tr>
 </table>
 
-<br/>
+<ul>
+  <li>The following table explores different sample counts for the bench mesh</li>
+</ul>
 
 <table>
   <tr>
@@ -119,3 +126,7 @@
     </td>
   </tr>
 </table>
+
+<ul>
+  <li>Higher sample counts reduce noise and improve visual quality</li>
+</ul>
