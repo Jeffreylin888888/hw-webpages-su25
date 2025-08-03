@@ -276,7 +276,10 @@
 ### Part 5
 
 <ul>
-  <li>• Adaptive sampling improves efficiency by focusing samples in high-variance regions.</li>
+  <li>I implemented adaptive sampling entirely inside raytrace_pixel(), replacing the fixed‐count loop with a while that fires up to ns_aa camera rays but checks convergence every samplesPerBatch samples. Each new radiance sample L adds its illuminance iv = L.illum() into running sums s1 and s2, so I can compute the mean μ = s1/n and variance σ² = (s2–s1²/n)/(n–1) on the fly. After every batch I form the 95% confidence half-width I = 1.96·σ/√n and, if I ≤ maxTolerance·μ, I break out early. Finally I write the pixel’s average color and the actual sample count into the buffers, which yields a clean image plus a heatmap showing exactly how many samples each pixel needed.
+</li>
+    <li>I implemented adaptive sampling entirely inside raytrace_pixel(), replacing the fixed‐count loop with a while that fires up to ns_aa camera rays but checks convergence every samplesPerBatch samples. Each new radiance sample L adds its illuminance iv = L.illum() into running sums s1 and s2, so I can compute the mean μ = s1/n and variance σ² = (s2–s1²/n)/(n–1) on the fly. After every batch I form the 95% confidence half-width I = 1.96·σ/√n and, if I ≤ maxTolerance·μ, I break out early. Finally I write the pixel’s average color and the actual sample count into the buffers, which yields a clean image plus a heatmap showing exactly how many samples each pixel needed.
+</li>
 </ul>
 <table>
   <tr>
