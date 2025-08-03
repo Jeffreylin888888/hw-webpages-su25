@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Homework 3
-nav_order: 3
+nav_order: 3 
 ---
 
 # https://jeffreylin888888.github.io/hw-webpages-su25/hw3
-### Homework 3: Jeffrey Lin
+### Homework 3: Jeffrey Lin laa
 
 ###Some tables might be super long horiztonally, so please check using:https://jeffreylin888888.github.io/hw-webpages-su25/hw3  Thank you!
 
