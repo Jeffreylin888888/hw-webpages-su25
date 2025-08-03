@@ -6,12 +6,25 @@
 
 - To demonstrate my normal shading implementation, I rendered three different .dae scenes using the -f flag to generate PNG files, as required. For CBspheres, I ran ./pathtracer -r 800 600 -f CBspheres.png ../dae/sky/CBspheres_lambertian.dae. This scene includes two spheres inside the Cornell Box, and the smooth color gradients across the curved surfaces confirm correct normal interpolation. For the banana scene, I used ./pathtracer -r 800 600 -f banana.png ../dae/keenan/banana.dae. The resulting image shows smoothly varying colors along the banana’s organic curves, validating the accuracy of my normal shading. Lastly, I rendered cow.dae using ./pathtracer -r 800 600 -f cow.png ../dae/sky/cow.dae. The cow’s rounded features and continuous shading transitions further showcase the successful interpolation of surface normals.
 
-<h3>Part 2</h3>
 
-<ul>
-  <li>This part includes visualizations of Lucy, Dragon, and Max Planck head</li>
-  <li>All scenes rendered inside Cornell box environments</li>
-</ul>
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/banana.png" width="200"/><br>banana.png
+    </td>
+    <td align="center">
+      <img src="assets/CBspheres.png" width="200"/><br>CBspheres.png
+    </td>
+    <td align="center">
+      <img src="assets/cow.png" width="200"/><br>cow.png
+    </td>
+  </tr>
+</table>
+
+
+### Part 2
+
+### Part 2
 
 <table>
   <tr>
@@ -19,42 +32,29 @@
       <img src="assets/cblucy.png" width="200"/><br>cblucy.png
     </td>
     <td align="center">
-      <img src="assets/cbdragon.png" width="200"/><br>cbdragon.png
+      <img src="assets/maxplanck_bvh.png" width="200"/><br>maxplanck_bvh.png
     </td>
     <td align="center">
-      <img src="assets/maxplanck.png" width="200"/><br>maxplanck.png
+      <img src="assets/cow_no_bvh.png" width="200"/><br>cow_no_bvh.png
     </td>
   </tr>
-</table>
-
-<ul>
-  <li>The models above are used to benchmark shading performance</li>
-</ul>
-
-<br/>
-
-<table>
   <tr>
     <td align="center">
-      <img src="assets/maxplanck_bvh.png" width="200"/><br>maxplanck_bvh.png
+      <img src="assets/cbdragon.png" width="200"/><br>cbdragon.png
     </td>
     <td align="center">
       <img src="assets/CBbunny_screenshot_8-1_16-4-56.png.png" width="200"/><br>CBbunny_screenshot_8-1.png
     </td>
-    <td></td>
-  </tr>
-</table>
-
-<br/>
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="assets/cow_no_bvh.png" width="200"/><br>cow_no_bvh.png
-    </td>
     <td align="center">
       <img src="assets/maxplanck_no_bvh.png" width="200"/><br>maxplanck_no_bvh.png
     </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="assets/maxplanck.png" width="200"/><br>maxplanck.png
+    </td>
+    <td></td>
     <td></td>
   </tr>
 </table>
+
