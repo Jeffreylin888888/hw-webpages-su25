@@ -177,7 +177,9 @@
 </table>
 
 <ul>
-  <li>• Some bullet point for context</li>
+  <li>I rendered CBbunny.dae at 1024 spp with four area-light samples in two configurations. In the un-accumulated mode (-o 0), which isolates only the mᵗʰ bounce, scene luminance drops steeply as m increases: the zero-bounce image is entirely black; the first-bounce image shows bright direct skylight; the second-bounce image adds strong red/blue wall-bleed; and by the third and higher bounces the contribution is essentially lost in noise. In the accumulated mode (-o 1), which sums contributions from bounce 0 through bounce m, overall brightness grows with each additional bounce, but the incremental increase diminishes rapidly: the transition from accum 1 to accum 2 yields the largest change (direct + colored indirect), whereas from accum 2 through accum 5 the extra fill is so subtle that it is only apparent when zoomed in for close inspection.
+
+</li>
 </ul>
 
 <table>
