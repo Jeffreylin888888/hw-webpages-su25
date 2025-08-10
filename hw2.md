@@ -24,13 +24,13 @@ Overview: For this project, we implemented a complete geometry processing pipeli
 
 ## 📷 Slides
 
-![Slide 1](assets/slide1.png)  
-![Slide 2](assets/slide2.png)  
-![Slide 3](assets/slide3.png)  
-![Slide 4](assets/slide4.png)  
-![Slide 5](assets/slide5.png)  
-![Slide 6](assets/slide6.png)  
-![Slide 7](assets/slide7.png)  
-![Slide 8](assets/slide8.png)
-![Slide 7](assets/9.png)  
-![Slide 8](assets/10.png)
+![Slide 1](assets/s1.png)  
+![Slide 2](assets/s2.png)  
+![Slide 3](assets/s3.png)  
+![Slide 4](assets/s4.png)  
+![Slide 5](assets/s5.png)  
+![Slide 6](assets/s6.png)  
+![Slide 7](assets/s7.png)  
+![Slide 8](assets/s8.png)
+![Slide 7](assets/s9.png)  
+![Slide 8](assets/s10.png)
