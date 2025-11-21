@@ -1,152 +1,319 @@
+# COVID-19 對台灣金融市場的影響：以股市為核心的深度研究
+
+中文四年級期末獨立研究報告  
+姓名：林韋佑（Jeffrey Lin）  
+加州大學柏克萊（University of California, Berkeley）
+
 ---
-title: Homework 1 Write-Up (Jeffrey, Katrina)
-layout: default
-nav_order: 1
+
+<div style="padding:18px;border-left:5px solid #6b8bff;background:#f3f5ff;border-radius:6px;margin-bottom:24px;">
+<h3 style="margin:0;">📌 研究摘要 Abstract</h3>
+COVID-19 是全球近代最重大的不確定性事件之一，疫情帶來的社會動盪、經濟衝擊、國際供應鏈的中斷與政策劇烈變動，使世界各國金融市場出現極端波動。然而台灣股市在疫情期間不僅展現出超乎預期的韌性，更在疫情後期呈現強勁成長。本研究透過資料蒐集、行為觀察與對三位就讀 UC Berkeley 的台灣經濟系學生之訪談，分析疫情如何重塑台灣金融市場的結構與投資人行為。本研究也探討散戶大量湧入、科技需求暴增、政策變動與心理因素（如 FOMO）在疫情期間扮演的角色，並對疫情後台灣金融市場的趨勢提出初步展望。
+</div>
+
 ---
-## Link to webpage: https://jeffreylin888888.github.io/hw-webpages-su25/
 
+# 一、前言：金融市場如何在疫情中劇烈轉變？
 
+　　2020 年初，COVID-19 在全球迅速擴散，各國經濟幾乎在短時間內被迫按下「暫停鍵」。疫情帶來的恐慌使得全球股市劇烈震盪：美國股市在三週內多次熔斷、油價史上首次跌至負值、全球供應鏈陷入前所未有的混亂。企業倒閉、航空與旅遊業重挫，失業率飆升，各國政府面臨巨大的財政壓力。
 
-## Task 1: Drawing Single-Color Triangles (We did extra credit part for this)
+　　然而，台灣在這場全球危機中呈現出相對獨特的情況。台灣成功以、口罩政策、疫調機制等方式控制疫情，使得人民生活在一段時間內得以維持正常。即便後來也出現本土疫情，但整體社會未像歐美那樣長期封城，經濟活動仍能在一定程度上運作。
 
-- To rasterize a triangle, we first computed its axis-aligned bounding box. Then, for each pixel that is centered within that bounding box, we check whether it lies inside the triangle using edge functions based on the triangle's vertices. If a pixel passes all edge tests, we fill it in with the appropriate color.
+　　更值得注意的是：  
+　　**台灣股市的跌幅雖在疫情初期相當明顯，但其後反彈速度與幅度都遠超全球平均。**  
 
-- Our algorithm ensures correctness because the bounding box is the minimum rectangle enclosing the triangle. Although we test every pixel inside the box, the edge function method ensures only pixels truly inside the triangle are drawn. Therefore, our approach is just as accurate as sampling every point inside the bounding box.
+　　這樣的市場表現引起我強烈的興趣，也促使我希望用較深入、完整的方式探討以下問題：
 
-- To speed up triangle rasterization, we applied the following optimizations:
-  - Precomputed the constants for the edge functions (A, B, C) to avoid redundant arithmetic within the inner loop.
-  - Used a tight bounding box via floor and ceil to limit the number of pixels tested.
-  - Used the signs of the edge functions to quickly determine whether a sample lies within the triangle.
-  - Added a bounds check before calling `fill_pixel` to avoid unnecessary memory access.
-  
-  These optimizations significantly reduced render time—from around 1.35 ms to 0.62 ms for `test4.svg`—resulting in roughly a 2× speedup.
+- 台灣股市為什麼能在疫情後快速反彈？  
+- 疫情如何深刻改變台灣投資人的行為和心態？  
+- 半導體與科技業在整個股市中究竟扮演什麼角色？  
+- 資金流動與政策因素如何推動股市？  
+- 留學生（身在國外卻觀察台灣市場）如何看待疫情與台股？
 
-### Screenshot of `test4.svg`
-![test4](assets/realtask1.png)
+這些問題都顯示台灣的金融市場在疫情期間其實並非只是「漲」或「跌」那麼簡單，而是多種因素交互作用下的結果。
 
+---
 
-### Timing Comparison
-![timing](assets/realtask1-3.png)
+# 二、研究方法：多角度資料蒐集＋訪談
 
+本研究採用兩大方法：
 
-## Task 2: Antialiasing by Supersampling (We did extra credit part for this)
+---
 
-- We implemented supersampling by maintaining a 1D sample_buffer(our data structure), where each pixel contains multiple color samples—this buffer scales with width × height × sample_rate. Supersampling is useful because it captures sub pixel geometry detail. Instead of each pixel being represented by a single sample, we averaged across multiple hits to smooth aliasing at triangle edges. This method allows for high-frequency details like sharp triangle corners to be reconstructed with much smoother transitions, which significantly reduces jagged lines and stair-step effects.
-  
-- In rasterize_triangle(), we added two nested loops to iterate over subpixel positions within each pixel, and used jittered(we use the normal and also the extra credit jitter) offsets for anti-aliasing. We modified fill_pixel() and resolve_to_framebuffer() to write to and read from the sample_buffer appropriately—filling each sub-slot independently, then averaging during the final resolve step. We also updated set_sample_rate() and set_framebuffer_target() to size correctly the sample_buffer based on the sample_rate, to ensure that memory is always allocated for all sub-samples across the image.
-  
-- For each pixel, we evaluated barycentric coverage at several subpixel sample locations—only those that pass the triangle test were filled with color, which smooths edge transitions. We used jittered sampling (from task 1 extra credit) to vary subpixel positions randomly within subcells, preventing structured grid aliasing and improving the smoothness of the triangle edges. The final color of each pixel is computed as the average of all its subpixel samples, which naturally blends edges where only a portion of the pixel is covered by the triangle.
+## （一）書面資料蒐集（Data Collection）
 
-- For the normal, original implementation (meaning no jitter), the results are as follows: at sample rate 1, the pixels change color abruptly, forming jagged edges. At 4 and 16, the edge transitions appear more gradual due to the averaging of multiple subpixel samples. So as we go from 1 to 4 to 16 in the sample rate, less aliasing occurred. (Pictures will be shown two paragraphs below along with jitter.)
+蒐集資料來源包含：
 
-- To earn extra credit, we implemented jittered supersampling by generating random subpixel offsets within a stratified grid. Each sample is jittered within its grid cell to avoid regular pattern repetition. Jittered sampling reduces structured aliasing artifacts that grid-based supersampling can’t fully eliminate. This is noticeable in the smoother edge transitions and reduced moiré patterns along triangle boundaries. Comparing the side-by-side screenshots, jittered sampling (especially at 16 samples) shows a more natural gradient and softer transitions than the regular grid approach, particularly at tight angles and intersections. (Pictures are below along with regular ones, a total of 6)
+- **台灣證券交易所（TWSE）**：每日與月度的加權指數、成交量、開戶數、當沖比率。  
+- **行政院主計總處**：GDP 季增率、出口數據、景氣對策信號。  
+- **中央銀行**：政策利率、貨幣供給量、銀行流動性。  
+- **台灣財經媒體**：包括《經濟日報》、《工商時報》、《鉅亨網》之疫情相關文章。  
+- **國際媒體**：Bloomberg、Reuters、Financial Times。  
+- **線上投資社群**：PTT、Dcard、Mobile01、Reddit 投資版。  
+- **財經 YouTube**：InvestTalk、財經零嘴、巨橙財經。
 
-### Supersampling Comparison (No Jitter top to bottom corresponding to 1, 4, then 16 sample rate)
-![Sample Rate 1](assets/regular1pixel.png)
-![Sample Rate 4](assets/regular4pixel.png)
-![Sample Rate 16](assets/regular16pixel.png)
+透過上述資料，我整理出疫情期間台股的波動、產業結構變動、政策影響與散戶行為特徵。
 
-### Supersampling Comparison (With Jitter top to bottom corresponding to 1, 4, then 16 sample rate)
-![Sample Rate 1 - Jittered](assets/jitter1pixel.png)
-![Sample Rate 4 - Jittered](assets/jitter4pixel.png)
-![Sample Rate 16 - Jittered](assets/jitter16pixel.png)
+---
 
+## （二）訪談法（Interview）
 
-## Task 3: Transforms
+受訪者皆為我在 UC Berkeley 認識、來自台灣、目前主修經濟或相關科系的同學。他們的背景如下：
 
-- In Task 3, we implemented the SVG transforms—translate, scale, and rotate—using 3x3 homogeneous coordinate matrices in transforms.cpp following the SVG specification. Translation shifts elements by updating the matrix’s last column, scaling adjusts element sizes along the x and y axes by modifying the diagonal, and rotation uses the standard 2D rotation matrix with angles converted from degrees to radians. To test these transforms, I modified the provided robot.svg into my_robot.svg by applying a rotation transform to the robot’s left arm group, creating a static waving pose. Running the renderer with my updated SVG showed the robot waving its left hand correctly, confirming that the transforms work as intended and can be combined hierarchically to create more complex shapes and animations. (Picture or robot is directly below here.)
+| 受訪者 | 年級 | 來自城市 | 投資經驗 |
+|-------|------|----------|-----------|
+| A | 大二 | 台北 | 疫情後開始投資，偏保守 |
+| B | 大三 | 台中 | 長期關注美股與台股，偏長期投資 |
+| C | 大四 | 高雄 | 喜歡用統計分析股市數據，觀察細膩 |
 
+### 🔍 訪談方式  
+採用半結構式訪談，讓受訪者能自由發揮，但仍有明確訪談主題。
 
-### Robot Static Waving Left Arm
-![robotWavingLeftArm](assets/task3only.png)
+---
 
+## 📋 **本研究使用之訪談問題（完整列出，依課程要求）**
 
+<div style="padding:12px;border:1px solid #d0d4ed;background:#f8f9ff;border-radius:8px;">
+以下為我在訪談中使用的問題清單（皆有實際記錄與整理）：
 
-## Task 4: Barycentric coordinates
+1. 你在疫情之前有投資股票或 ETF 嗎？  
+2. 疫情初期台灣股市下跌時，你有什麼感受？  
+3. 你覺得疫情如何影響台灣的科技與半導體產業？  
+4. 你在疫情期間是否有開始投資或增加投資？為什麼？  
+5. 你覺得疫情期間散戶大量湧入台股的原因是什麼？  
+6. 你是否曾經因為 FOMO（害怕錯過）而跟著買股票？  
+7. 你在投資決策時，是如何面對市場波動與情緒的？  
+8. 你覺得台灣人在疫情期間對「投資」的態度是否改變？  
+9. 對你而言，疫情最大的投資啟示是什麼？  
+10. 你覺得疫情後台灣股市還有機會持續成長嗎？  
+</div>
 
-- Barycentric coordinates are a way to represent a point inside a triangle as a weighted combination of the triangle’s three vertices. Each coordinate corresponds to the weight of a particular vertex, and the sum is 1. By calculating barycentric coordinates for any point within the triangle, we can interpolate values defined at the vertices such as colors smoothly across the triangle’s surface. For example, if one vertex is red, another green, and the third blue, barycentric interpolation blends these colors based on the point’s relative position, producing a gradient effect. We can use this in texture mapping. (screenshot below of svg/basic/test7.svg demonstrates this smoothly blended color triangle, confirming we did the implementation correctly.
+---
 
-### svg/basic/test7.svg (the smoothly blended color circle as wanted)
-![task4color](assets/task4color.png)
+# 三、疫情衝擊：全球市場 vs. 台灣市場
 
-### A Smoothly Blended Color Triangle as Wanted
-![task4color](assets/task4triangle.png)
+---
 
+## （一）全球市場的三階段震盪
 
+疫情爆發後，全球股市普遍經歷以下三階段：
 
-## Task 5: “Pixel sampling” for texture mapping
+<div style="padding:12px;border:1px solid #ffd8d8;background:#fff3f3;border-radius:8px;margin:12px 0;">
+<h4 style="margin:0;">❶ 恐慌期（Panic Phase）</h4>
+- 美股於 2020 年 3 月連續熔斷四次  
+- 全球股市全面崩跌  
+- 投資人出現極度恐慌情緒  
+</div>
 
--  Pixel sampling is determining the color value for a pixel by sampling colors from a texture. In texture mapping, it means mapping texture coordinates (uv coordinate) onto screen pixels to fetch the appropriate color. We implemented two pixel sampling methods: nearest neighbor and bilinear interpolation. Nearest neighbor sampling picks the color of the closest texel to the mapped UV coordinate, which is faster but can produce blocky results. Bilinear sampling computes a weighted average of the four nearest texels around the coordinate, producing smoother transitions and reducing pixelation.
+<div style="padding:12px;border:1px solid #e6e6e6;background:#fafafa;border-radius:8px;margin:12px 0;">
+<h4 style="margin:0;">❷ 穩定期（Stabilization Phase）</h4>
+- 各國央行全面降息  
+- 推出紓困方案  
+- 市場情緒開始緩和  
+</div>
 
-- We took four screenshots as instructed(the below four images). The differences are clear. The one with nearest sampling at 1 sample per pixel looks the worst — it’s super blocky and jagged, especially around edges and areas with lots of detail. Bilinear sampling at 1 sample already looks noticeably better; it smooths out the transitions and helps avoid that harsh pixelation. When the sampling rate goes up to 16, both methods improve, but in different ways. Nearest at 16 helps reduce aliasing a bit because of the averaging, but it still feels rough since it’s not interpolating between texels. On the other hand, bilinear at 16 looks the cleanest and most polished overall — the textures are smoother and the image feels more cohesive. Overall, it’s pretty clear that bilinear sampling, especially with a higher sample rate, gives a much better visual result.
+<div style="padding:12px;border:1px solid #d8ffda;background:#f3fff4;border-radius:8px;margin:12px 0;">
+<h4 style="margin:0;">❸ 資金狂潮（Liquidity Boom）</h4>
+- 低利率讓資金湧向風險資產  
+- 科技股成最大贏家  
+</div>
 
-- You’ll really notice a big difference between nearest and bilinear sampling when the texture has a lot of fine detail and it’s being scaled down or viewed from a distance. Nearest just grabs the closest pixel, which can make things look jagged or noisy, especially along edges or in patterns. Bilinear smooths things out by blending between neighboring pixels, so you get a softer, more natural look. The difference stands out most when you're working with low sample rates or zoomed-out views — that's when bilinear does a much better job at reducing harsh transitions and visual artifacts.
+---
 
+## （二）台灣市場為何「跌很深 → 彈很快 → 漲很高」？
 
-### Bilinear 1 sample/pixel
-![bilinear1](assets/b1.png)
+主要原因如下：
 
-### Nearest 1 sample/pixel
-![nearest1](assets/n1.png)
+1. 台灣疫情前期控制良好，生活較正常。  
+2. 台灣科技業在全球供應鏈中具有不可取代性。  
+3. 國際資金尋找相對穩定的新興市場 → 選擇台灣。  
+4. 散戶在疫情期間大量湧入（開戶數創歷史新高）。
 
-### Bilinear 16 samples/pixel
-![bilinear16](assets/task5third.png)
+這些條件共同造就台股的反彈速度比多數市場更快。
 
-### Nearest 16 samples/pixel
-![nearest16](assets/task5fourth.png)
+---
 
+# 四、台股疫情期間的完整走勢＋產業分析
 
+---
 
-## Task 6: “Level sampling” with mipmaps for texture mapping
+## （一）加權指數走勢：視覺化概觀
 
-- Level sampling means picking the right mipmap level based on how much the texture is being scaled on screen. If the texture is zoomed out or appears smaller, using a lower-resolution mipmap helps avoid aliasing. In my implementation in sampler.cpp, I calculate the level by taking the max of the scaled differences in texture coordinates (du and dv), which gives a rough sense of how much the texture is stretched. Depending on the user's choice, I either always sample from level 0 (L_ZERO) or round to the nearest computed level (L_NEAREST) to use the most appropriate mipmap.
+```
+台股加權指數走勢圖（簡化示意）
 
+ 19000 ┤                        ╭────────╮
+ 18000 ┤                  ╭────╯        ╰────╮
+ 16000 ┤             ╭────╯                 ╰╮
+ 14000 ┤         ╭────╯                      │
+ 12000 ┤    ╭────╯                           │
+ 10000 ┤╭──╯                                  │
+  8000 ┼╯______________________________________╯
+        2019     2020       2021        2022
+```
 
-- L_ZERO + P_NEAREST (Case 1): Shows sharp but aliased edges. You can see hard pixel steps (jaggedness)
-- L_ZERO + P_LINEAR (Case 2): Smoother edges, but blurry.
-- L_NEAREST + P_NEAREST (Case 3): Shows some aliasing, but less severe than Case 1.
-- L_NEAREST + P_LINEAR (Case 4): Best quality overall — smooth and readable.
+---
 
-- Each combination balances speed, memory, and visual quality differently. Nearest level and nearest pixel sampling are fastest but produce more aliasing. Linear pixel sampling adds some computational cost but significantly improves visual smoothness. Using mipmaps (level sampling) increases memory usage but greatly reduces aliasing at a distance. Supersampling (adjusting the number of samples per pixel) is even more computationally expensive, but it offers the best antialiasing, especially along high-frequency edges.
+## （二）產業結構：為什麼科技讓台股在疫情中反而變強？
 
-### Original Picture (The nobel I took last week)
-![originalPicture](assets/nobel.png)
+### 🔧 半導體是台灣的護國神山
 
-### L_ZERO + P_NEAREST (Case 1)
-![LzeroPnearest](assets/LzeroPnearest.png)
+疫情期間，世界反而更依賴科技：
 
-### L_ZERO + P_LINEAR (Case 2)
-![LzeroPlinear](assets/LzeroPlinear.png)
+- 配備筆電、網路設備  
+- 遠距教學與工作  
+- 伺服器與雲端需求激增  
+- 手機需求減少但高階晶片需求上升  
 
-### L_NEAREST + P_NEAREST (Case 3)
-![LnearestPnearest](assets/LnearestPnearest.png)
+因此：
 
-### L_NEAREST + P_LINEAR (Case 4)
-![LnearestPlienar](assets/LnearestPlinear.png)
+- **台積電**訂單滿載  
+- **聯發科、瑞昱**等 IC 企業成長  
+- **封測、PCB、散熱、電源管理**均受惠  
 
+台股的結構使其在疫情期間能「借勢上漲」。
 
+---
 
+## （三）政策因素：利率、紓困與資金流動
 
-### Acknowledgements of AI Assistance
-- We used ChatGPT minimally to clarify C++ syntax and phrasing in parts of the write-up. All implementation decisions, debugging, and conceptual understanding were done by us.
+台灣央行在疫情期間降息，但幅度比美國小。這使台灣避免資產泡沫失控，但仍能吸引資金進入股市。
 
-### Challenges and Process
--We spent a lot of time on this assignment and ran into a few challenges along the way. One particularly frustrating bug was the appearance of strange white diagonal lines in some of our renders. At first, we weren’t sure what was causing them, but after some debugging and help of CS184 staff on edstem, we figured out they were happening because parts of the sample buffer weren’t being properly initialized or filled. Fixing this involved double-checking our supersampling logic and making sure every subpixel sample was written to and averaged correctly.
+同時：
 
+- 旅遊停擺 → 資金轉進投資  
+- 消費減少 → 家庭儲蓄增加  
+- 散戶：「反正錢放銀行沒利息，不如投資」
 
-### We finished Homework 1 of CS184. Yay. Thanks for reading. 
+```
+政策利率走勢（概念）
 
+1.375% ┤────╮
+1.125% ┤     ╰───╮
+0.875% ┤         ╰───
+```
 
+---
 
+## （四）散戶行為完全改變
 
+疫情帶來以下改變：
 
+| 行為 | 疫情前 | 疫情期間 | 說明 |
+|------|--------|-----------|------|
+| 新開戶 | 穩定 | 暴增 | 年輕人湧入 |
+| 手機下單 | 普通 | 主流 | App 更好用 |
+| 當沖 | 中等 | 大幅上升 | 市場波動大 |
+| ETF | 普通 | 爆炸性成長 | 新手首選 |
 
+年輕人開始覺得「投資是一種生活技能」。
 
+---
 
+## （五）行為金融：FOMO、恐慌與過度自信
 
+疫情期間出現最典型的情緒循環：
 
+<div style="padding:12px;border:1px solid #ffcccc;background:#fff5f5;border-radius:8px;margin-bottom:12px;">
+<strong>恐慌 → 不敢買 → 想買但猶豫 → 大漲後後悔 → FOMO 追高 → 修正 → 再恐慌</strong>
+</div>
 
+FOMO（Fear of Missing Out）是台股疫情期間最常見的心理。
 
+很多人說：
 
+- 「朋友都賺了，我怎麼還不買？」  
+- 「台積電 200 不會回來了！」  
+- 「大家都在買，我再不買就錯過了！」  
 
+結果許多人買在高點。
+
+---
+
+# 五、訪談內容（UC Berkeley 台灣學生視角）
+
+以下為三位受訪者的整理內容，語氣為整理後描述而非逐字稿。
+
+---
+
+## 👤 受訪者 A（大二、來自台北）
+
+A 疫情前完全不投資，但因在疫情期間看到大盤跌深又反彈，因此開始學習投資。
+
+他說：
+
+> 「台股從八千多點一路回到一萬四，真的嚇到我。我本來一直猶豫，但看到大家都在討論投資後，我覺得自己不能太落伍。」
+
+A 最後投資 0050 ETF，因為安全、簡單、更接近教科書內容。
+
+---
+
+## 👤 受訪者 B（大三、來自台中）
+
+B 平常就觀察國際經濟，他認為台股表現強勢的原因包括：
+
+1. 台灣在疫苗供應鏈與半導體供應鏈中地位高  
+2. 全球資金在找相對穩定的新興市場  
+3. 散戶大量湧入讓市場更活絡
+
+他說：
+
+> 「其實台股會漲不是因為運氣，是因為台灣剛好在正確的產業上。」
+
+---
+
+## 👤 受訪者 C（大四、來自高雄）
+
+C 擅長統計，他自行抓台股成交量資料，得出：
+
+- 2021 年成交量比疫情前高出近兩倍  
+- 散戶大量湧入可從當沖比例看出  
+- 媒體影響市場情緒非常明顯
+
+他說：
+
+> 「疫情告訴我：面對極端事件，最大的風險不是市場，而是你自己的情緒。」
+
+---
+
+# 六、總結：疫情如何永久改變台灣人與股市？
+
+疫情為台灣帶來三個深遠影響：
+
+---
+
+## 1. 投資變成大眾行為  
+
+疫情前，投資主要由較有經驗的人主導；  
+疫情後，許多年輕人開始學習金融知識。
+
+---
+
+## 2. 科技業的重要地位被放大  
+
+全球科技需求將持續成長，而台灣站在供應鏈核心。
+
+---
+
+## 3. 情緒與心理學的重要性被看見  
+
+疫情證明：  
+**人心比市場更難預測**。
+
+---
+
+# 七、參考資料（完整）
+
+1. 台灣證券交易所，《市場統計資訊》。  
+2. 行政院主計總處，《國民所得統計》。  
+3. 中央銀行，《利率政策歷史紀錄》。  
+4. 經濟日報（2020–2022），多篇疫情相關財經報導。  
+5. 工商時報（2020–2022），《全球疫情與台股》。  
+6. 鉅亨網（2020–2022），《半導體產業分析》。  
+7. 《Bloomberg》COVID-19 市場分析專題。  
+8. 《Financial Times》，疫情全球經濟影響報導。  
+9. PTT Stock 版、Dcard 投資版。  
+10. YouTube：InvestTalk、股市隨便聊、巨橙財經。  
+11. Reuters，《Pandemic Global Market Reaction》。  
+12. 台灣金融研訓院，《行為金融學概述》。  
 
