@@ -1,7 +1,7 @@
 # COVID-19 對台灣金融市場的影響：以股市為核心的深度研究
 
 中文四年級期末獨立研究報告  
-姓名：林杰夫（Jeffrey Lin）  
+姓名：林韋佑（Jeffrey Lin）  
 加州大學柏克萊（University of California, Berkeley）  
 
 ---
